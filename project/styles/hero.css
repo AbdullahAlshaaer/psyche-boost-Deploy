@@ -1,0 +1,103 @@
+.hero {
+    min-height: 100vh;
+    background: linear-gradient(to right, rgba(79, 70, 229, 0.9), rgba(67, 56, 202, 0.8)),
+                url('https://images.unsplash.com/photo-1518531933037-91b2f5f229cc') center/cover;
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-top: 5rem;
+}
+
+.hero-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    color: var(--white);
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.hero-content p {
+    font-size: 1.25rem;
+    max-width: 600px;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    padding-top: 20px;
+}
+
+.stats-cards {
+    position: absolute;
+    bottom: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 2rem;
+}
+
+.stat-card {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 250px;
+}
+
+.stat-card h3 {
+    font-size: 1.5rem;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+
+.stat-card p {
+    color: var(--text-light);
+}
+
+@media (max-width: 768px) {
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .stats-cards {
+        position: static;
+        transform: none;
+        flex-direction: column;
+        padding: 2rem 1rem;
+    }
+
+    .stat-card {
+        width: 100%;
+    }
+    .hero-content {
+        /* Existing styles */
+        padding: 50px; /* Adjust the padding value as needed */
+    }
+    
+    .hero-content h1 {
+        margin-top: -20px; /* Adjust the margin-top value as needed */
+    }
+    .button-container {
+        display: flex;
+        flex-direction: column; /* Stack buttons vertically */
+        align-items: center; /* Center buttons horizontally */
+        gap: 10px; /* Add some space between buttons */
+    }
+    
+    .button-container:first-child {
+        order: 2; /* Secondary button will be on top */
+    }
+    
+    .button-container:last-child {
+        order: 1; /* Primary button will be below secondary button */
+    }
+}

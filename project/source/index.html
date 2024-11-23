@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Depression Assessment Results</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/navbar.css">
+    <link rel="stylesheet" href="styles/hero.css">
+    <link rel="stylesheet" href="styles/cards.css">
+    <style>
+        
+        /* Navbar styling */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-dark);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            cursor: pointer;
+        }
+
+        .nav-toggle span {
+            width: 25px;
+            height: 2px;
+            background: var(--text-dark);
+            transition: all 0.3s ease;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .nav-toggle {
+                display: flex;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--white);
+                padding: 1rem;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 1rem;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links button {
+                width: 100%;
+            }
+        }
+    
+        ul {
+            list-style-type: none;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        li {
+            font-size: 18px;
+            margin: 5px 0;
+        }
+        
+        /* Color codes for each number span */
+        .minimal span { color: #00b050; }   /* Green */
+        .mild span { color: #0070c0; }      /* Blue */
+        .moderate span { color: #ffc000; }  /* Yellow */
+        .moderately-severe span { color: #ed7d31; } /* Orange */
+        .severe span { color: #c00000; }    /* Red */
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo">Psyche Boost</a>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links">
+                
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="Resources.html">Resources</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <button style="border-radius: 6.5rem;" class="btn-primary" onclick="window.location.href='test.html'">Get Started</button>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <h1 style="margin-top: 80px;">Depression Assessment Results</h1>
+
+        <div class="score-input">
+            <label for="score">Enter your score (0-27):</label>
+            <input type="number" id="score" min="0" max="27" required>
+            <button onclick="assessScore()">View Results</button>
+
+            
+        </div>
+        
+        
+        
+        <div id="result" class="result-container">
+
+            <ul>
+                <li class="minimal"><span>0-4</span>: Minimal depression</li>
+                <li class="mild"><span>5-9</span>: Mild depression</li>
+                <li class="moderate"><span>10-14</span>: Moderate depression</li>
+                <li class="moderately-severe"><span>15-19</span>: Moderately severe depression</li>
+                <li class="severe"><span>20-27</span>: Severe depression</li>
+            </ul>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
